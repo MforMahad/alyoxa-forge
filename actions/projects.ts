@@ -2,12 +2,15 @@
 
 import { getDatabase } from "@/lib/db/mongodb";
 
+export type ProjectActionState = {
+  success: boolean;
+  error: string | null;
+  slug: string | null;
+};
+
 export async function createProject(
-  previousState: {
-    success: boolean;
-    error: string | null;
-  },
-  formData: FormData,
+  previousState: ProjectActionState,
+  formData: FormData
 ) {
   const name = formData.get("name");
   const description = formData.get("description");
@@ -53,6 +56,7 @@ export async function createProject(
       return {
         success: false,
         error: "A project with this name already exists.",
+        slug: null,
       };
     }
 
@@ -62,5 +66,6 @@ export async function createProject(
   return {
     success: true,
     error: null,
+    slug,
   };
 }

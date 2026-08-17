@@ -1,14 +1,23 @@
 "use client";
 
-import { createProject } from "@/actions/projects";
-import { useActionState } from "react";
+import { createProject, type ProjectActionState } from "@/actions/projects";
+import { useActionState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ProjectForm() {
-  const initialState = {
+  const initialState: ProjectActionState = {
     success: false,
     error: null,
+    slug: null,
   };
   const [state, formAction] = useActionState(createProject, initialState);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (state.success && state.slug) {
+      router.push(`/dashboard/projects/${state.slug}`);
+    }
+  }, [state.success, state.slug, router]);
 
   return (
     <div>
@@ -36,6 +45,9 @@ export default function ProjectForm() {
         {state.error && <p>{state.error}</p>}
 
         <button type="submit">Create Project</button>
+        <p>
+        Created slug: {state.slug}
+        </p>
       </form>
     </div>
   );
