@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Right: Architectural Action Buttons */}
           <div className="hidden lg:flex items-center justify-end gap-8 flex-1">
             <a
-              href="https://github.com"
+              href="https://github.com/Alyoxa"
               target="_blank"
               rel="noreferrer"
               className="text-xs uppercase tracking-widest text-[#27272A]/60 hover:text-[#18181B] transition-colors font-medium"

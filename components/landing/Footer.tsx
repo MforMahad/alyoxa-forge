@@ -120,9 +120,9 @@ export function Footer() {
               <Image
                 src="/assets/images/logo/Alyoxa-Forge-Logo.svg"
                 alt="Alyoxa Forge"
-                width={280}
+                width={200}
                 height={70}
-                className="w-[180px] md:w-[260px] h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                className="w-[180px] md:w-[200px] h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                 priority
               />
             </Link>
