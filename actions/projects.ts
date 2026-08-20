@@ -25,6 +25,15 @@ export async function createProject(
     throw new Error("Description must be at least 10 characters.");
   }
 
+// created the value so that i can just return the project name not the fill String(name).trim()
+  const projectName = String(name).trim();
+  const projectDesc = String(description).trim();
+  const projectCreatedAt = new Date();
+  const projectUpdatedAt = new Date();
+
+
+
+
   const slug = name
     .trim()
     .toLowerCase()
@@ -39,12 +48,12 @@ export async function createProject(
 
   try {
     await db.collection("projects").insertOne({
-      name: String(name).trim(),
+      name: projectName,
       slug,
-      description: String(description).trim(),
+      description:projectDesc,
       userId: "test-user",
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: projectCreatedAt,
+      updatedAt: projectUpdatedAt,
     });
   } catch (error) {
     if (
@@ -67,5 +76,10 @@ export async function createProject(
     success: true,
     error: null,
     slug,
+    name:projectName,
+    description: projectDesc,
+    createdAt:projectCreatedAt ,
+    updatedAt:projectUpdatedAt
+
   };
 }
