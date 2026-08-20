@@ -75,13 +75,13 @@ export default function Navbar() {
               GitHub
             </a>
             <Link
-              href="/dashboard/projects"
+              href="/dashboard"
               className="text-xs uppercase tracking-widest text-[#18181B] hover:text-[#18181B]/60 transition-colors font-medium"
             >
               Sign In
             </Link>
             <Link
-              href="/dashboard/projects"
+              href="/dashboard"
               className="text-[11px] font-semibold uppercase tracking-widest text-[#F7F6F2] bg-[#141415] hover:bg-[#27272A] px-6 py-4 rounded-lg transition-all flex items-center gap-2 group shadow-sm"
             >
               Get Started

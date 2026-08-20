@@ -43,7 +43,7 @@ export default function Hero() {
           {/* Action Elements */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-20">
             <Link
-              href="/dashboard/projects"
+              href="/dashboard"
               className="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#18181B] hover:bg-[#27272A] text-[#F7F6F2] text-xs font-semibold uppercase tracking-widest transition-all flex items-center justify-center gap-2 group shadow-md"
             >
               Get Started
